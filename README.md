@@ -27,6 +27,7 @@ fi
 Create a symlink to the `.vim` directory in the repository:
 
 ```bash
+mv .vim .vim.bac
 ln -s ~/stothardgit/dotfiles/.vim/ ~/.vim
 ```
 
