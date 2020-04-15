@@ -47,7 +47,7 @@ set showcmd
 set cursorline
 
 " load filetype-specific indent files
-filetype indent on
+filetype plugin indent on
 
 " visual autocomplete for command menu
 set wildmenu
