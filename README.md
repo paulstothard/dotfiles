@@ -2,7 +2,7 @@
 
 ## bashrc
 
-In .bashrc add something like the following:
+In .bashrc or .bash\_profile add something like the following:
 
 ```bash
 DOTFILES=~/"stothardgit/dotfiles/"
