@@ -11,8 +11,8 @@ syntax enable
 :set spell spelllang=en_us
 
 " adjust colors for words detected by spell check
-:hi SpellBad ctermfg=red
-:hi SpellCap ctermfg=red
+:hi SpellBad ctermfg=red ctermbg=black
+:hi SpellCap ctermfg=red ctermbg=black
 :hi SpellRare ctermfg=red ctermbg=black
 :hi SpellLocal ctermfg=black ctermbg=white
 
