@@ -1,9 +1,72 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-colorscheme badwolf     " awesome colorscheme
-syntax enable           " enable syntax processing
+" awesome colorscheme
+colorscheme badwolf
 
-set tabstop=1           " number of visual spaces per TAB
-set softtabstop=1       " number of spaces in tab when editing
-set expandtab           " tabs are spaces
+" enable syntax processing
+syntax enable
+
+" add a colored column at 80 
+set colorcolumn=80
+
+" view tab and newline characters
+set list
+
+" wrap lines visually
+set wrap
+
+" wrap at word boundaries
+set linebreak
+
+" number of visual spaces per TAB
+set tabstop=2
+
+" number of spaces in tab when editing
+set softtabstop=2
+
+" tabs are spaces
+set expandtab
+
+" show line numbers
+set number
+
+" show command in bottom bar
+set showcmd
+
+" highlight current line
+set cursorline
+
+" load filetype-specific indent files
+filetype indent on
+
+" visual autocomplete for command menu
+set wildmenu
+
+" redraw only when we need to
+set lazyredraw
+
+" highlight matching [{()}]
+set showmatch
+
+" search as characters are entered
+set incsearch
+
+" highlight matches
+set hlsearch
+
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR> 
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
+" leader is comma
+let mapleader=","
+
+" jk is escape
+inoremap jk <esc>
+
+" source vimrc using ,s
+map <leader>s :source ~/.vim/vimrc<CR>
