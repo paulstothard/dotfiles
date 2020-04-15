@@ -35,6 +35,7 @@ alias tmuxa='tmux attach -t analysis'
 alias light='salloc --time=2:0:0 --ntasks=1 --account=def-stothard --mem=2000M'
 alias heavy='salloc --time=2:0:0 --ntasks=16 --account=def-stothard --mem=32000M'
 alias finished='sacct -s CD --format=JobID,JobName,MaxRSS,ReqMem,Elapsed,End,State,NodeList'
+alias f='open -a Finder ./'
 
 #Functions
 extract () {
