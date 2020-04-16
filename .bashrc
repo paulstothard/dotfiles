@@ -1,12 +1,28 @@
-#Prompt
-if [[ -z "$CONDA_DEFAULT_ENV" ]]; then
-  PS1="\u@\h$ "
-else
-  PS1="(${CONDA_DEFAULT_ENV}) \u@\h$ ";
+#Platform
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+  platform='linux'
+elif [[ "$unamestr" == 'FreeBSD' ]]; then
+  platform='freebsd'
 fi
 
-export CLICOLOR=1
-export LSCOLORS=ExFxCxDxBxegedabagacad
+#Prompt
+if [[ -z "$CONDA_DEFAULT_ENV" ]]; then
+  export PS1="\e[0;31m[\u@\h \W]\$ \e[m "
+else
+  export PS1="\e[0;31m[(${CONDA_DEFAULT_ENV})\u@\h \W]\$ \e[m "
+fi
+
+#Colors
+if [[ $platform == 'linux' ]]; then
+  export LS_COLORS="di=1;34;1:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
+  alias ls='ls --color=auto'
+elif [[ $platform == 'freebsd' ]]; then
+  export CLICOLOR=1
+  export LSCOLORS=ExFxCxDxBxegedabagacad
+  alias ls='ls -G'
+fi
 
 #Navigation
 set -o vi
