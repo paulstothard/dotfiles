@@ -1,27 +1,51 @@
 #Platform
-platform='unknown'
-unamestr=`uname`
-if [[ "$unamestr" == 'Linux' ]]; then
-  platform='linux'
-elif [[ "$unamestr" == 'FreeBSD' ]]; then
-  platform='freebsd'
-fi
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    CYGWIN*)    machine=Cygwin;;
+    MINGW*)     machine=MinGw;;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
 
 #Prompt
 if [[ -z "$CONDA_DEFAULT_ENV" ]]; then
-  export PS1="\e[0;31m[\u@\h \W]\$ \e[m "
+  export PS1="\e[0;31m\u@\h \W\$\e[m "
 else
-  export PS1="\e[0;31m[(${CONDA_DEFAULT_ENV})\u@\h \W]\$ \e[m "
+  export PS1="\e[0;31m(${CONDA_DEFAULT_ENV})\u@\h \W\$\e[m "
 fi
 
 #Colors
-if [[ $platform == 'linux' ]]; then
+if [[ $machine == 'Linux' ]]; then
   export LS_COLORS="di=1;34;1:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
   alias ls='ls --color=auto'
-elif [[ $platform == 'freebsd' ]]; then
+elif [[ $machine == 'Mac' ]]; then
   export CLICOLOR=1
   export LSCOLORS=ExFxCxDxBxegedabagacad
   alias ls='ls -G'
+
+  #opens current directory in Mac OS Finder
+  alias f='open -a Finder ./'
+  alias DT='tee ~/Desktop/terminalOut.txt'
+  trash () { command mv "$@" ~/.Trash ; }
+
+  #cdf: cd to frontmost window of Mac OS Finder
+  cdf () {
+      currFolderPath=$( /usr/bin/osascript <<EOT
+          tell application "Finder"
+              try
+          set currFolder to (folder of the front window as alias)
+              on error
+          set currFolder to (path to desktop folder as alias)
+              end try
+              POSIX path of currFolder
+          end tell
+EOT
+      )
+      echo "cd to \"$currFolderPath\""
+      cd "$currFolderPath"
+  }
+
 fi
 
 #Navigation
@@ -38,6 +62,7 @@ alias myip='curl checkip.dyndns.org'
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | more'
 alias lra='ls -Ra | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | more'
 alias ll='ls -FGlAhp'
+alias c='clear'
 alias ...='cd ../../'
 alias .3='cd ../../../'
 alias .4='cd ../../../../'
@@ -48,7 +73,6 @@ alias tmuxa='tmux attach -t analysis'
 alias light='salloc --time=2:0:0 --ntasks=1 --account=def-stothard --mem=2000M'
 alias heavy='salloc --time=2:0:0 --ntasks=16 --account=def-stothard --mem=32000M'
 alias finished='sacct -s CD --format=JobID,JobName,MaxRSS,ReqMem,Elapsed,End,State,NodeList'
-alias f='open -a Finder ./'
 
 #Functions
 extract () {
