@@ -64,9 +64,6 @@ set incsearch
 " highlight matches
 set hlsearch
 
-" turn off search highlight
-nnoremap <leader><space> :nohlsearch<CR> 
-
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
@@ -81,4 +78,7 @@ inoremap jk <esc>
 map <leader>s :source ~/.vim/vimrc<CR>
 
 " delete trailing white space using ,w
-:nnoremap <leader>w :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
+nnoremap <leader>w :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s<CR>
+
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR> 
