@@ -79,3 +79,6 @@ inoremap jk <esc>
 
 " source vimrc using ,s
 map <leader>s :source ~/.vim/vimrc<CR>
+
+" delete trailing white space using ,w
+:nnoremap <leader>w :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
