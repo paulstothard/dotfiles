@@ -12,7 +12,7 @@ esac
 BYELLOW='\[\033[01;33m\]'
 IBLACK='\[\033[0;90m\]'
 PS_CLEAR='\[\033[0m\]'
-export PS1="\n${BYELLOW}[\w]${PS_CLEAR}\n${IBLACK}\$ "
+export PS1="\n${BYELLOW}[\w]${PS_CLEAR}\n${IBLACK}\$${PS_CLEAR} "$ 
 
 #Colors
 if [[ $machine == 'Linux' ]]; then
