@@ -9,11 +9,10 @@ case "${unameOut}" in
 esac
 
 #Prompt
-if [[ -z "$CONDA_DEFAULT_ENV" ]]; then
-  export PS1="\e[0;31m\u@\h \W\$\e[m "
-else
-  export PS1="\e[0;31m(${CONDA_DEFAULT_ENV})\u@\h \W\$\e[m "
-fi
+BYELLOW='\[\033[01;33m\]'
+IBLACK='\[\033[0;90m\]'
+PS_CLEAR='\[\033[0m\]'
+export PS1="\n${BYELLOW}[\w]${PS_CLEAR}\n${IBLACK}\$ "
 
 #Colors
 if [[ $machine == 'Linux' ]]; then
