@@ -9,9 +9,12 @@ case "${unameOut}" in
 esac
 
 #Prompt
-BYELLOW='\[\033[01;33m\]'
-PS_CLEAR='\[\033[0m\]'
-export PS1="\n${BYELLOW}[\w]${PS_CLEAR}\n\$ "
+White='\[\033[0;37m\]'
+BRed='\[\033[1;31m\]'
+BIRed='\[\033[1;91m\]'
+BYellow='\[\033[1;33m\]'
+Color_Off='\[\033[0m\]'
+export PS1="\n${White}[${BIRed}\h${White}:${BYellow}\w${White}]${Color_Off}\n\$ "
 
 #Colors
 if [[ $machine == 'Linux' ]]; then
