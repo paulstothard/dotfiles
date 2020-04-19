@@ -16,8 +16,11 @@ hi SpellCap ctermfg=red ctermbg=black
 hi SpellRare ctermfg=red ctermbg=black
 hi SpellLocal ctermfg=black ctermbg=white
 
-" add a colored column at 80 
+" add a colored column at 80
 set colorcolumn=80
+
+" hide buffers instead of closing
+set hidden
 
 " view tab and newline characters
 set list
@@ -81,7 +84,7 @@ map <leader>s :source ~/.vim/vimrc<CR>
 nnoremap <leader>w :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s<CR>
 
 " turn off search highlight
-nnoremap <leader><space> :nohlsearch<CR> 
+nnoremap <leader><space> :nohlsearch<CR>
 
 " show lightline status bar
 set laststatus=2
