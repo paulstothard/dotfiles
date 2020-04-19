@@ -3,9 +3,6 @@
 Get a copy of the repository:
 
 ```bash
-cd ~
-mkdir stothardgit
-cd stothardgit
 git clone git@github.com:paulstothard/dotfiles.git
 cd dotfiles/.vim/
 git submodule update --init
@@ -16,7 +13,7 @@ git submodule update --init
 Add the following to the end of `.bashrc` or `.bash_profile`:
 
 ```bash
-DOTFILES=~/"stothardgit/dotfiles/"
+DOTFILES="path/to/dotfiles/"
 if [ -f "${DOTFILES}.bashrc" ]; then
         . "${DOTFILES}.bashrc"
 fi
@@ -27,53 +24,41 @@ fi
 Create a symlink to the `.vim` directory in the repository:
 
 ```bash
-mv .vim .vim.bac
-ln -s ~/stothardgit/dotfiles/.vim/ ~/.vim
+cd ~
+ln -s path/to/dotfiles/.vim/ .vim
+```
+
+## tmux
+
+Create a symlink to the `.tmux.conf` file in the repository:
+
+```bash
+cd ~
+ln -s path/to/dotfiles/.tmux.conf .tmux.conf
 ```
 
 # Modifying the dotfiles
 
-## bashrc
-
-Make changes to the `~/stothardgit/dotfiles/.bashrc` file and run:
+After making changes, use `git add` and `git commit`, for example:
 
 ```bash
-cd ~/stothardgit/dotfiles/
+cd dotfiles
 git add .bashrc
 git commit -m "Update .bashrc file"
 git push origin master
 ```
 
-## vim
-
-Make changes to the `~/stothardgit/dotfiles/.vim/vimrc` file and run:
+To install new vim plugins, use `git submodule`, for example:
 
 ```bash
-cd ~/stothardgit/dotfiles/.vim
-git add vimrc
-git commit -m "Update vimrc file"
-git push origin master
-```
-
-Make changes to the `~/stothardgit/dotfiles/.vim/gvimrc` file and run:
-
-```bash
-cd ~/stothardgit/dotfiles/.vim
-git add gvimrc
-git commit -m "Update gvimrc file"
-git push origin master
-```
-
-Installing a new plugin as a submodule:
-
-```bash
-cd ~/stothardgit/dotfiles/.vim/
+cd dotfiles/.vim/
 git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
 git add .
 git commit -m "Install Fugitive.vim bundle as a submodule."
 ```
 
-After installing a submodule, edit the `.gitmodules` file in the root of your repository by adding `ignore = dirty` to the end of the submodule entry:
+After installing a submodule, edit the `.gitmodules` file in the root of your
+repository by adding `ignore = dirty` to the end of the submodule entry:
 
 ```bash
 [submodule "bundle/fugitive"]
