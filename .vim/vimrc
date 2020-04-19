@@ -19,6 +19,9 @@ hi SpellLocal ctermfg=black ctermbg=white
 " add a colored column at 80
 set colorcolumn=80
 
+" hide buffers instead of closing
+set hidden
+
 " view tab and newline characters
 set list
 
