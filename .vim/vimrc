@@ -8,13 +8,13 @@ colorscheme badwolf
 syntax enable
 
 " enable spell check
-:set spell spelllang=en_us
+set spell spelllang=en_us
 
 " adjust colors for words detected by spell check
-:hi SpellBad ctermfg=red ctermbg=black
-:hi SpellCap ctermfg=red ctermbg=black
-:hi SpellRare ctermfg=red ctermbg=black
-:hi SpellLocal ctermfg=black ctermbg=white
+hi SpellBad ctermfg=red ctermbg=black
+hi SpellCap ctermfg=red ctermbg=black
+hi SpellRare ctermfg=red ctermbg=black
+hi SpellLocal ctermfg=black ctermbg=white
 
 " add a colored column at 80 
 set colorcolumn=80
@@ -82,3 +82,10 @@ nnoremap <leader>w :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <B
 
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR> 
+
+" show lightline status bar
+set laststatus=2
+set noshowmode
+
+" start NERDTree
+autocmd vimenter * NERDTree

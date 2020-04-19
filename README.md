@@ -67,13 +67,13 @@ git push origin master
 Installing a new plugin as a submodule:
 
 ```bash
-cd ~/stothardgit/dotfiles/.vim/bundle
+cd ~/stothardgit/dotfiles/.vim/
 git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
 git add .
 git commit -m "Install Fugitive.vim bundle as a submodule."
 ```
 
-Once you added a submodule there will be a file named `.gitmodules` in the root of your repository. Add `ignore = dirty` to the end, so that it looks like:
+After installing a submodule, edit the `.gitmodules` file in the root of your repository by adding `ignore = dirty` to the end of the submodule entry:
 
 ```bash
 [submodule "bundle/fugitive"]

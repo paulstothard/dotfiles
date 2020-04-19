@@ -5,6 +5,8 @@
 [submodule ".vim/bundle/lightline"]
 	path = .vim/bundle/lightline
 	url = https://github.com/itchyny/lightline.vim.git
+	ignore = dirty
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = https://github.com/preservim/nerdtree.git
+	ignore = dirty
