@@ -88,7 +88,6 @@ nnoremap <leader><space> :nohlsearch<CR>
 
 " show lightline status bar
 set laststatus=2
-set noshowmode
 
 " start NERDTree
 autocmd vimenter * NERDTree
