@@ -89,3 +89,4 @@ set noshowmode
 
 " start NERDTree
 autocmd vimenter * NERDTree
+autocmd VimEnter * wincmd p
