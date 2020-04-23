@@ -46,14 +46,24 @@ alias .3='cd ../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../../'
 alias .6='cd ../../../../../../'
-alias tmuxn='tmux -u new -s analysis'
-alias tmuxa='tmux -u attach -t analysis'
+alias tmuxn='tmux -u new -s single'
+alias tmuxa='tmux -u attach -t single'
+alias tmuxam='tmux -u attach -t multiple'
 alias tmuxd='tmux -u detach'
 alias light='salloc --time=2:0:0 --ntasks=1 --account=def-stothard --mem=2000M'
 alias heavy='salloc --time=2:0:0 --ntasks=16 --account=def-stothard --mem=32000M'
 alias finished='sacct -s CD --format=JobID,JobName,MaxRSS,ReqMem,Elapsed,End,State,NodeList'
 
 #Functions
+tmuxnm () {
+  tmux new-session -s multiple \; \
+  send-keys 'vim' C-m \; \
+  split-window -v -p 25 \; \
+  split-window -h -p 50 \; \
+  select-pane -t 0 \; 
+}
+
+
 extract () {
 if [ -f $1 ] ; then
   case $1 in
@@ -75,7 +85,7 @@ if [ -f $1 ] ; then
  fi
 }
 
-my_ps() { ps $@ -u $USER -o pid,%cpu,%mem,start,time,bsdtime,command ; }
+my_ps () { ps $@ -u $USER -o pid,%cpu,%mem,start,time,bsdtime,command ; }
 
 mcd () { mkdir -p "$1" && cd "$1"; }
 
