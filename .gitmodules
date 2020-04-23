@@ -14,3 +14,6 @@
 	path = .vim/bundle/csv
 	url = https://github.com/chrisbra/csv.vim
 	ignore = dirty
+[submodule ".vim/bundle/vim-tmux-navigator"]
+	path = .vim/bundle/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
