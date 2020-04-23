@@ -24,29 +24,6 @@ elif [[ $machine == 'Mac' ]]; then
   export CLICOLOR=1
   export LSCOLORS=ExFxCxDxBxegedabagacad
   alias ls='ls -G'
-
-  #opens current directory in Mac OS Finder
-  alias f='open -a Finder ./'
-  alias DT='tee ~/Desktop/terminalOut.txt'
-  trash () { command mv "$@" ~/.Trash ; }
-
-  #cdf: cd to frontmost window of Mac OS Finder
-  cdf () {
-      currFolderPath=$( /usr/bin/osascript <<EOT
-          tell application "Finder"
-              try
-          set currFolder to (folder of the front window as alias)
-              on error
-          set currFolder to (path to desktop folder as alias)
-              end try
-              POSIX path of currFolder
-          end tell
-EOT
-      )
-      echo "cd to \"$currFolderPath\""
-      cd "$currFolderPath"
-  }
-
 fi
 
 #Navigation
@@ -58,7 +35,7 @@ export PATH="$PATH:~/bin"
 #Editor
 export EDITOR=/usr/bin/vim
 
-#Alias
+#Aliases
 alias myip='curl checkip.dyndns.org'
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | more'
 alias lra='ls -Ra | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | more'
@@ -101,3 +78,30 @@ if [ -f $1 ] ; then
 my_ps() { ps $@ -u $USER -o pid,%cpu,%mem,start,time,bsdtime,command ; }
 
 mcd () { mkdir -p "$1" && cd "$1"; }
+
+#Functions for Mac
+if [[ $machine == 'Mac' ]]; then
+
+  #opens current directory in Mac OS Finder
+  alias f='open -a Finder ./'
+  alias DT='tee ~/Desktop/terminalOut.txt'
+  trash () { command mv "$@" ~/.Trash ; }
+
+  #cdf: cd to frontmost window of Mac OS Finder
+  cdf () {
+      currFolderPath=$( /usr/bin/osascript <<EOT
+          tell application "Finder"
+              try
+          set currFolder to (folder of the front window as alias)
+              on error
+          set currFolder to (path to desktop folder as alias)
+              end try
+              POSIX path of currFolder
+          end tell
+EOT
+      )
+      echo "cd to \"$currFolderPath\""
+      cd "$currFolderPath"
+  }
+
+fi
