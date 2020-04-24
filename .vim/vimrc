@@ -101,3 +101,6 @@ map <C-l> <C-W>l
 
 " improve colors in tmux
 set background=dark
+
+" quit vim if NERDTree is last and only buffer
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
