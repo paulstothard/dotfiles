@@ -31,14 +31,20 @@ set wrap
 " wrap at word boundaries
 set linebreak
 
-" number of visual spaces per TAB
-set tabstop=2
-
 " number of spaces in tab when editing
-set softtabstop=2
+set softtabstop=4
 
 " tabs are spaces
 set expandtab
+
+" indent based on current line when starting a new line
+set autoindent
+
+" smart autoindenting when starting a new line
+set smartindent
+
+" indentation when using < and >
+set shiftwidth=4
 
 " show line numbers
 set number
