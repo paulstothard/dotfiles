@@ -102,3 +102,4 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Termius - SSH client", id: 1176074088
 mas "The Unarchiver", id: 425424353
+mas "ToothFairy", id: 1191449274
