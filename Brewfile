@@ -14,6 +14,9 @@ tap "homebrew/cask"
 tap "brewsci/bio"
 cask_args appdir: "/Applications"
 
+#Java required for nextflow, prokka, snpeff
+cask "java"
+
 #Command line
 #For listing of all packages available from the core tap via the Homebrew package manager for macOS see:
 #https://formulae.brew.sh/formula/
@@ -71,7 +74,6 @@ cask "google-chrome"
 cask "google-drive-file-stream"
 cask "inkscape"
 cask "iterm2"
-cask "java"
 cask "macdown"
 cask "microsoft-office"
 cask "openemu"
@@ -83,7 +85,6 @@ cask "spotify"
 cask "termius"
 cask "textmate"
 cask "transmit"
-cask "virtualbox"
 cask "visual-studio-code"
 cask "vlc"
 cask "xquartz"
@@ -95,7 +96,6 @@ cask "xquartz"
 mas "BetterSnapTool", id: 417375580
 mas "Day One", id: 1055511498
 mas "Display Menu", id: 549083868
-mas "GarageBand", id: 408980954
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
