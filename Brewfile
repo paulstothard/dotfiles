@@ -14,7 +14,10 @@ tap "homebrew/cask"
 tap "brewsci/bio"
 cask_args appdir: "/Applications"
 
-#Java required for nextflow, prokka, snpeff
+#OpenJDK8 required for nextflow
+cask "homebrew/cask-versions/adoptopenjdk8"
+
+#Java required prokka, snpeff
 cask "java"
 
 #Command line
