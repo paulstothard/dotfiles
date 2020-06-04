@@ -63,7 +63,6 @@ tmuxnm () {
   select-pane -t 0 \; 
 }
 
-
 extract () {
 if [ -f $1 ] ; then
   case $1 in
@@ -89,12 +88,12 @@ my_ps () { ps $@ -u $USER -o pid,%cpu,%mem,start,time,bsdtime,command ; }
 
 mcd () { mkdir -p "$1" && cd "$1"; }
 
-#Functions for Mac
+#Functions and aliases for Mac
 if [[ $machine == 'Mac' ]]; then
-
   #opens current directory in Mac OS Finder
   alias f='open -a Finder ./'
   alias DT='tee ~/Desktop/terminalOut.txt'
+  alias textedit='open -a TextEdit'
   trash () { command mv "$@" ~/.Trash ; }
 
   #cdf: cd to frontmost window of Mac OS Finder
