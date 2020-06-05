@@ -54,7 +54,6 @@ brew "wget"
 #For listing of packages available from the brewsci/bio tap see:
 #https://github.com/brewsci/homebrew-bio/tree/develop/Formula
 brew "bioperl"
-brew "blast-legacy"
 brew "blat"
 brew "clustal-w"
 brew "emboss"
