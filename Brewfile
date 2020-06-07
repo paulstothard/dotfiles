@@ -24,7 +24,7 @@ cask "java"
 #For listing of all packages available from the core tap via the Homebrew package manager for macOS see:
 #https://formulae.brew.sh/formula/
 #
-#For listing of HomeBrew packages on current system:
+#For listing of Homebrew packages on current system:
 #brew list
 brew "bash"
 brew "bedtools"
@@ -66,7 +66,7 @@ brew "snpeff"
 #For a listing of all casks available from the cask tap via the Homebrew package manager for macOS see:
 #https://formulae.brew.sh/cask/
 #
-#For listing of HomeBrew casks on current system:
+#For listing of Homebrew casks on current system:
 #brew cask list
 cask "docker"
 cask "dropbox"
