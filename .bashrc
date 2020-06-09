@@ -50,9 +50,6 @@ alias tmuxn='tmux -u new -s single'
 alias tmuxa='tmux -u attach -t single'
 alias tmuxam='tmux -u attach -t multiple'
 alias tmuxd='tmux -u detach'
-alias light='salloc --time=2:0:0 --ntasks=1 --account=def-stothard --mem=2000M'
-alias heavy='salloc --time=2:0:0 --ntasks=16 --account=def-stothard --mem=32000M'
-alias finished='sacct -s CD --format=JobID,JobName,MaxRSS,ReqMem,Elapsed,End,State,NodeList'
 
 #Functions
 tmuxnm () {
