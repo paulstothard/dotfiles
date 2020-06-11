@@ -69,6 +69,7 @@ brew "snpeff"
 #
 #For listing of Homebrew casks on current system:
 #brew cask list
+cask "dash"
 cask "docker"
 cask "dropbox"
 cask "firefox"
