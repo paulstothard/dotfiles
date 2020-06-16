@@ -100,9 +100,11 @@ cask "xquartz"
 #To obtain IDs of installed Mac App Store software:
 #brew install mas
 #mas list
+mas "Affinity Photo", id: 824183456
 mas "BetterSnapTool", id: 417375580
 mas "Day One", id: 1055511498
 mas "Display Menu", id: 549083868
+mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
