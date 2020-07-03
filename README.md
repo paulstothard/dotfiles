@@ -37,32 +37,8 @@ cd ~
 ln -s path/to/dotfiles/.tmux.conf .tmux.conf
 ```
 
-# Modifying the dotfiles
-
-After making changes, use `git add` and `git commit`, for example:
+## brew
 
 ```bash
-cd dotfiles
-git add .bashrc
-git commit -m "Update .bashrc file"
-git push origin master
-```
-
-To install new vim plugins, use `git submodule`, for example:
-
-```bash
-cd dotfiles/.vim/
-git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
-git add .
-git commit -m "Install Fugitive.vim bundle as a submodule."
-```
-
-After installing a submodule, edit the `.gitmodules` file in the root of your
-repository by adding `ignore = dirty` to the end of the submodule entry:
-
-```bash
-[submodule "bundle/fugitive"]
-    path = bundle/fugitive
-    url = git://github.com/tpope/vim-fugitive.git
-    ignore = dirty
+brew bundle --file Brewfile
 ```
