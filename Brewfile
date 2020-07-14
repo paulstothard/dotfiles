@@ -74,6 +74,7 @@ brew "snpeff"
 #
 #For listing of Homebrew casks on current system:
 #brew cask list
+cask "alacritty"
 cask "dash"
 cask "docker"
 cask "dropbox"
