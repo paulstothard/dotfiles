@@ -94,6 +94,7 @@ if [[ $machine == 'Mac' ]]; then
   alias f='open -a Finder ./'
   alias DT='tee ~/Desktop/terminalOut.txt'
   alias textedit='open -a TextEdit'
+  alias excel='open -a /Applications/Microsoft\ Excel.app/'
   trash () { command mv "$@" ~/.Trash ; }
 
   #cdf: cd to frontmost window of Mac OS Finder
