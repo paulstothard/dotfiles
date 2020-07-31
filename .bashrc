@@ -26,6 +26,9 @@ elif [[ $machine == 'Mac' ]]; then
   alias ls='ls -G'
 fi
 
+#History
+export HISTCONTROL=ignoreboth:erasedups
+
 #Navigation
 set -o vi
 
