@@ -76,6 +76,7 @@ brew "snpeff"
 #brew cask list
 cask "adobe-acrobat-reader"
 cask "alacritty"
+cask "clipy"
 cask "dash"
 cask "docker"
 cask "dropbox"
