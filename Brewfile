@@ -56,6 +56,7 @@ brew "tldr"
 brew "tmux"
 brew "tree"
 brew "wget"
+brew "youtube-dl"
 
 #For listing of packages available from the brewsci/bio tap see:
 #https://github.com/brewsci/homebrew-bio/tree/develop/Formula
